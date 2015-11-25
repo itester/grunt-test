@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <title>test</title>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://v3.bootcss.com/examples/starter-template/starter-template.css">
+    <link rel="stylesheet" type="text/css" href="build/css/grunt_test.min.css">
+  </head>
+
+  <body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Project name</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="starter-template">
+      <h1>Bootstrap starter template</h1>
+      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    </div>
+
+  </div><!-- /.container -->
+
+
+  <div class="wrap">
+	  <div class="title">title</div>
+	  <div class="title-sub">sub title - <span id="con"></span></div>
+	  <div class="content">
+		  <div>
+			  <ul id="mock">
+			  </ul>
+			  <div id="mock-loading">loading</div>
+		  </div>
+	  </div>
+  </div>
+  	<script type="text/javascript" src="../libs/jquery/dist/jquery.min.js"></script>
+  	<script type="text/javascript" src="../libs/react/build/react.min.js"></script>
+  	<script type="text/javascript" src="../libs/react/build/react-dom.min.js"></script>
+  	<script type="text/javascript" src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="build/js/grunt_test.min.js"></script>
+    <script>
+			function loader(){
+			  var mock = [];
+			  for(var i=0; i<10; i++){
+			  	mock.push('<a href="javascript:void(0);"><h3>测试数据:' + i + '</h3><div>sub title ' + i + '</div></a>');
+			  }
+			  $('#mock').append('<li>' + mock.join('</li><li>') + '</li>');
+			};
+      (function () {
+        document.getElementById('con').innerText = (new Date()).getTime();
+      })();
+
+      $(function(){
+      	$(document).on('scroll', function(){
+
+	      	var $r = $('#mock-loading');
+	      	$r.is(":visible") && $(window).scrollTop() + window.innerHeight - $r.offset().top > -200 && loader();
+
+      	});
+      });
+
+      $(document).ready(function(){
+      	loader();
+      });
+    </script>
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </body>
+</html>

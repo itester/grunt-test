@@ -1,0 +1,38 @@
+div {
+  font-size: 16px;
+}
+.no-mp {
+  margin: 0;
+  padding: 0;
+}
+.round {
+  border-radius: 7px;
+}
+.wrap {
+  width: 95%;
+  margin: 10px auto;
+  background-color: #fefefe;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 7px;
+}
+.title {
+  color: #5B83AD;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 2em;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+.title-sub {
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+ul#mock {
+  margin: 0;
+  padding: 0;
+}
+ul#mock li {
+  list-style: none;
+}
